@@ -42,7 +42,7 @@ public class VehicleController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity delete(@PathVariable("id") final Integer id) {
+    public ResponseEntity delete(@PathVariable("id") @NotNull final Integer id) {
         return ResponseEntity.ok(daoFactory.getMonitoringObjectDao().delete(id));
     }
 }

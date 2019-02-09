@@ -1,0 +1,39 @@
+version: '3.4'
+
+networks:
+  overlay:
+    driver: overlay
+
+volumes:
+  postgres_data:
+    driver: local
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    networks:
+      - overlay
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - ./src/main/resources/sql/init.sql:/docker-entrypoint-initdb.d/1.init.sql
+      - ./src/main/resources/sql/data.sql:/docker-entrypoint-initdb.d/2.data.sql
+
+  application:
+    build:
+      context: .
+      args:
+        JAR_FILE: ./build/libs/app.jar
+    environment:
+      - JAVA_OPTIONS=-Xmx256m -Xmx256m
+    ports:
+      - 8080:8080
+    networks:
+      - overlay
+    links:
+      - postgres
