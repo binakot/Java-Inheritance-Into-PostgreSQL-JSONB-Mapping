@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimumIdle: 1
+      maximumPoolSize: 4
+      autoCommit: true
+      registerMbeans: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO

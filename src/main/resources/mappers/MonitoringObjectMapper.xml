@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+    'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace="io.binakot.demo.model.dao.MonitoringObjectMapper">
+    <resultMap id="monitoringObjectResultMap" type="monitoringObject">
+        <constructor>
+            <arg column="attributes" javaType="java.lang.String" />
+        </constructor>
+        <id column="id" property="id"/>
+        <result column="type" property="type"/>
+        <result column="latitude" property="latitude"/>
+        <result column="longitude" property="longitude"/>
+        <result column="course" property="course"/>
+        <result column="speed" property="speed"/>
+        <discriminator column="type" javaType="io.binakot.demo.model.entity.MonitoringObjectType" >
+            <case value="VEHICLE" resultType="io.binakot.demo.model.entity.Vehicle"/>
+            <case value="EMPLOYEE" resultType="io.binakot.demo.model.entity.Employee"/>
+        </discriminator>
+    </resultMap>
+</mapper>
