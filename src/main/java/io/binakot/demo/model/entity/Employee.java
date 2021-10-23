@@ -27,6 +27,7 @@ public class Employee extends MonitoringObject {
     public String getName() {
         return name;
     }
+
     public void setName(final String name) {
         this.name = name;
     }
@@ -34,6 +35,7 @@ public class Employee extends MonitoringObject {
     public String getPhoneNumber() {
         return phoneNumber;
     }
+
     public void setPhoneNumber(final String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }

@@ -1,22 +1,20 @@
-version: '3.4'
+version: '3'
 
 networks:
   overlay:
-    driver: overlay
 
 volumes:
   postgres_data:
-    driver: local
 
 services:
   postgres:
-    image: postgres
+    image: postgres:latest
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
-      - 5432:5432
+      - '5432:5432'
     networks:
       - overlay
     volumes:
@@ -30,9 +28,9 @@ services:
       args:
         JAR_FILE: ./build/libs/app.jar
     environment:
-      - JAVA_OPTIONS=-Xmx256m -Xmx256m
+      - JAVA_OPTIONS=-Xmx128m -Xmx256m
     ports:
-      - 8080:8080
+      - '8080:8080'
     networks:
       - overlay
     links:

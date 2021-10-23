@@ -28,6 +28,7 @@ public abstract class MonitoringObject {
     public Integer getId() {
         return id;
     }
+
     public void setId(final Integer id) {
         this.id = id;
     }
@@ -35,6 +36,7 @@ public abstract class MonitoringObject {
     public MonitoringObjectType getType() {
         return type;
     }
+
     public void setType(final MonitoringObjectType type) {
         this.type = type;
     }
@@ -42,6 +44,7 @@ public abstract class MonitoringObject {
     public Double getLatitude() {
         return latitude;
     }
+
     public void setLatitude(final Double latitude) {
         this.latitude = latitude;
     }
@@ -49,6 +52,7 @@ public abstract class MonitoringObject {
     public Double getLongitude() {
         return longitude;
     }
+
     public void setLongitude(final Double longitude) {
         this.longitude = longitude;
     }
@@ -56,6 +60,7 @@ public abstract class MonitoringObject {
     public Float getCourse() {
         return course;
     }
+
     public void setCourse(final Float course) {
         this.course = course;
     }
@@ -63,6 +68,7 @@ public abstract class MonitoringObject {
     public Float getSpeed() {
         return speed;
     }
+
     public void setSpeed(final Float speed) {
         this.speed = speed;
     }
