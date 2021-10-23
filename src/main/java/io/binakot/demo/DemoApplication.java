@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Profile;
 @SpringBootApplication
 public class DemoApplication {
 
-	public static void main(final String... args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+    public static void main(final String... args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 }
 

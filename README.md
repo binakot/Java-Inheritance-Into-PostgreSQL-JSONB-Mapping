@@ -1,6 +1,6 @@
 # Java inheritance into PostgreSQL JSONB mapping
 
-The demo project with mapping of Java objects inheritance 
+The demo project with mapping of Java objects inheritance
 into PostgreSQL JSONB columns via Jackson and MyBatis.
 
 ## Development
@@ -8,7 +8,7 @@ into PostgreSQL JSONB columns via Jackson and MyBatis.
 To build & test:
 
 ```bash
-./gradlew build test
+$ ./gradlew build test
 ```
 
 ## Running on localhost
@@ -16,14 +16,14 @@ To build & test:
 To run application on localhost:
 
 ```bash
-./gradlew bootRun
+$ ./gradlew bootRun
 ```
 
-Required `PostgreSQL` running on port `5432` with database schema. 
+Required `PostgreSQL` running on port `5432` with database schema.
 It can be done with Docker container:
 
 ```bash
-docker run \
+$ docker run \
     --name postgres \
     -e POSTGRES_DB="postgres" \
     -e POSTGRES_USER="postgres" \
@@ -32,7 +32,7 @@ docker run \
     -v ${PWD}/src/main/resources/sql/init.sql:/docker-entrypoint-initdb.d/1.init.sql \
     -v ${PWD}/src/main/resources/sql/data.sql:/docker-entrypoint-initdb.d/2.data.sql \
     -p 5432:5432 \
-    -d postgres
+    -d postgres:latest
 ```
 
 ## Running in Docker (the easiest start)
@@ -40,25 +40,25 @@ docker run \
 To package the application into jar file:
 
 ```bash
-./gradlew bootRepackage
+$ ./gradlew bootJar
 ```
 
 To build the application docker image:
 
 ```bash
-docker-compose build
+$ docker-compose build
 ```
 
 To run in Docker with PostgreSQL database:
 
 ```bash
-docker-compose up -d
+$ docker-compose up -d
 ```
 
 To stop the application and PostgreSQL database:
 
 ```bash
-docker-compose down
+$ docker-compose down --volumes
 ```
 
 ---

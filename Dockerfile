@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:11-jre
 MAINTAINER Ivan Muratov <binakot@gmail.com>
 
 EXPOSE 8080

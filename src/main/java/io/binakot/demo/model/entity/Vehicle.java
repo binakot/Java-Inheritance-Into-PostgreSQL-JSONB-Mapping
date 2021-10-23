@@ -26,6 +26,7 @@ public class Vehicle extends MonitoringObject {
     public String getModel() {
         return model;
     }
+
     public void setModel(final String model) {
         this.model = model;
     }
@@ -33,6 +34,7 @@ public class Vehicle extends MonitoringObject {
     public String getRegNumber() {
         return regNumber;
     }
+
     public void setRegNumber(final String regNumber) {
         this.regNumber = regNumber;
     }
